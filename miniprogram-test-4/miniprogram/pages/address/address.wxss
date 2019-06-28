@@ -1,0 +1,84 @@
+.btn-area {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.btn-area button {
+  border-radius: 0;
+}
+
+.section {
+  display: flex;
+  margin: 15rpx;
+}
+
+.section__title {
+  width: 200rpx;
+  padding: 15rpx;
+}
+
+.picker-view {
+  border: 1rpx solid lightgrey;
+  display: flex;
+  flex-direction: row;
+  padding: 15rpx;
+  width: 440rpx;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.detail-address {
+  margin: 15rpx;
+}
+
+.detail-address .section_title {
+  padding: 15rpx;
+}
+
+.detail-address input {
+  margin: 15rpx;
+  padding: 15rpx;
+  border: 1rpx solid lightgrey;
+}
+
+.select-icon {
+  height: 20rpx;
+  width: 34rpx;
+}
+.weui-agree {
+  display: block;
+  padding: 0.5em 15px;
+  font-size: 13px;
+}
+
+.weui-agree__text {
+  color: #999;
+}
+
+.weui-agree__link {
+  display: inline;
+  color: #586c94;
+}
+
+.weui-agree__checkbox {
+  position: absolute;
+  left: -9999px;
+}
+
+.weui-agree__checkbox-icon {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  border: 1px solid #d1d1d1;
+  background-color: #fff;
+  border-radius: 3px;
+  width: 11px;
+  height: 11px;
+}
+
+.weui-agree__checkbox-icon-check {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}

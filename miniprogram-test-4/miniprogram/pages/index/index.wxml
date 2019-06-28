@@ -1,0 +1,66 @@
+<swiper stytle="height=1000rpx" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" circular="{{circular}}" vertical="{{vertical}}" interval="{{interval}}" duration="{{duration}}" previous-margin="{{previousMargin}}px" next-margin="{{nextMargin}}px">
+  <block wx:for="{{imageurl}}" wx:key="*this">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" style="width:100%;height:100%" mode="aspectFit" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='separate'></view>
+<view class="touch" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+  <scroll-view scroll-y="true" class="container">
+    <view class="search flex-wrp">
+      <view class="search-left flex-item">
+        <input placeholder="搜索商品" placeholder-class="search-placeholder" value="{{searchValue}}" auto-focus bindinput="searchValueInput" bindconfirm='start_search_db' />
+      </view>
+      <view class="search-right flex-item" bindtap="upper">
+        <image src="../../images/search.png"></image>
+      </view>
+    </view>
+
+    <icon class="iconfont iconicon_tianjia:before" bindtap="onPostClick" />
+
+    <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" wx:key="*this">
+
+      <view class="feed-item" data-item-Value="{{item}}" bindtap="bindItemTap">
+
+        <view class="feed-source">
+
+          <a class="">
+            <view class="avatar">
+              <image src="../../images/icon1.jpeg"></image>
+            </view>
+            <text>{{item.user_name}}发布了商品</text>
+
+          </a>
+        </view>
+
+        <view>
+
+          <label class="mylabel" wx:for="{{item.post_tags}}" wx:for-index="idx" wx:for-item="item_tag">
+            <text class="label_text">{{item_tag}}</text> </label>
+        </view>
+
+        <view class="feed-content">
+
+          <view class="answer-body">
+            <view data-item-Value="{{item}}" bindtap="bindItemTap">
+              <text class="answer-txt">{{item.post_brief}}</text>
+            </view>
+            <view class="answer-actions" data-item-Value="{{item}}" bindtap="bindItemTap">
+              <view class="like dot">
+                <a>{{item.like_count}} 收藏</a>
+              </view>
+              <view class="comments">
+                <a>{{item.follow_count}} 回复</a>
+
+              </view>
+            </view>
+
+          </view>
+        </view>
+
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<view class='separate'></view>

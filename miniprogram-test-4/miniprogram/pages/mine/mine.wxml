@@ -1,0 +1,118 @@
+<view class="items">
+  <view wx:if="{{hidden > 0}}">
+    <view class="account bg">
+      <view class="img">
+        <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" style="width:200rpx;height:200rpx;">
+        </image>
+      </view>
+      <view class="login">
+        {{userInfo.nickName}}
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+
+    <!-- 需要使用 button 来授权登录 -->
+    <button wx:if="{{canIUse}}" class="buttontype" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+      <text>点击以登录</text>
+    </button>
+  </view>
+  <view class="address-container" wx:if="{{ address.detail_address && address.customer_name && address.customer_mobile }}" bindtap="bindTapAddress">
+    <view class="receiver">
+      <view>
+        <text>收货人：{{address.customer_name}}</text>
+      </view>
+      <view>
+        <text>{{address.customer_mobile}}</text>
+      </view>
+    </view>
+    <view class="address">
+      <text>{{address.province}} {{address.city}} {{address.county}} {{address.detail_address}}</text>
+    </view>
+  </view>
+  <view wx:else bindtap="bindTapAddress">
+    <button class="button" type='primary'>填写收货地址</button>
+  </view>
+  <view class='line'></view>
+
+
+  <view class="hr">
+  </view>
+  <!--  -->
+
+  <view class="item" bindtap='jumpto_collect'>
+    <view class="imgp" bindtap='jumpto_collect'>
+      <image src="../../images/star.png" style="width:50rpx;height:50rpx;"></image>
+    </view>
+    <view class="name" bindtap='jumpto_collect'>我收藏的商家</view>
+    <view class="detail" bindtap='jumpto_collect'>
+      <text>></text>
+    </view>
+  </view>
+
+  <view class="line"></view>
+
+  <view class="item" bindtap='jumpto_myinterest'>
+    <view class="imgp" bindtap='jumpto_myinterest'>
+      <image src="../../images/care.png" style="width:50rpx;height:50rpx;"></image>
+    </view>
+    <view class="name" bindtap='jumpto_myinterest'>我关注的商品</view>
+    <view class="detail" bindtap='jumptp_myinterest'>
+      <text>></text>
+    </view>
+  </view>
+
+  <view class="line"></view>
+
+  <view class="item">
+    <view class="imgp">
+      <image src="../../images/recent.png" style="width:50rpx;height:50rpx;"></image>
+    </view>
+    <view class="name">我最近的浏览</view>
+    <view class="detail">
+      <text>></text>
+    </view>
+  </view>
+
+  <view class="hr">
+  </view>
+
+  <view class="item" bindtap='jumpto_mypost'>
+    <view class="imgp" bindtap='jumpto_mypost'>
+      <image src="../../images/draft.png" style="width:50rpx;height:50rpx;"></image>
+    </view>
+    <view class="name" bindtap='jumpto_mypost'>我的订单</view>
+    <view class="detail" bindtap='jumpto_mypost'>
+      <text>></text>
+    </view>
+  </view>
+
+  <view class="hr">
+  </view>
+
+  <view class="item">
+    <view class="imgp">
+      <image src="../../images/invite.png" style="width:50rpx;height:50rpx;"></image>
+    </view>
+    <view class="name">邀请好友</view>
+    <view class="detail">
+      <text>></text>
+    </view>
+  </view>
+
+  <view class="hr">
+  </view>
+
+  <view class="item">
+    <view class="name">客服电话</view>
+    <view class="detail">
+      <text>(xxxx)</text>
+    </view>
+  </view>
+
+  <view class="line">
+  </view>
+
+
+
+</view>

@@ -1,0 +1,92 @@
+<view class="page">
+  <!--view class="page__bd">
+    <view class="weui-search-bar">
+      <view class="weui-search-bar__form">
+        <view class="weui-search-bar__box">
+          <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+          <input type="text" class="weui-search-bar__input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" bindinput="inputTyping" />
+          <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" bindtap="clearInput">
+            <icon type="clear" size="14"></icon>
+          </view>
+        </view>
+        <label class="weui-search-bar__label" hidden="{{inputShowed}}" bindtap="showInput">
+          <icon class="weui-icon-search" type="search" size="14"></icon>
+          <view class="weui-search-bar__text">搜索</view>
+        </label>
+      </view>
+      <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" bindtap="hideInput">取消</view>
+    </view>
+  </view-->
+
+  <!--pages/search/search.wxml-->
+  <!--index.wxml-->
+  <view class="touch" bindtouchstart="touchStart" bindtouchmove="touchMove" bindtouchend="touchEnd">
+    <!--切换页面-->
+    <scroll-view scroll-y="true" class="container" bindscrolltoupper="upper" upper-threshold="10" lower-threshold="5" bindscrolltolower="lower" scroll-into-view="{{toView}}" scroll-top="{{scrollTop}}">
+      <view class="search flex-wrp">
+        <!--搜索框开始-->
+        <view class="search-left flex-item">
+          <!--image src="../../images/search.png"></image-->
+          <input placeholder="搜索商品" placeholder-class="search-placeholder" value="{{searchValue}}" auto-focus bindinput="searchValueInput" bindconfirm='start_search_db' />
+        </view>
+        <view class="search-right flex-item" bindtap="upper">
+          <image src="../../images/search.png"></image>
+        </view>
+      </view>
+      <!--搜索框结束-->
+
+      <icon class="iconfont iconicon_tianjia:before" bindtap="onPostClick" />
+
+
+      <block wx:for="{{feed}}" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}" wx:key="*this">
+
+        <view class="feed-item" data-item-Value="{{item}}" bindtap="bindItemTap">
+
+          <view class="feed-source">
+            <!--用户基本信息版块开始-->
+            <a class="">
+              <view class="avatar">
+                <!-- <image src="{{item.user_head}}"></image>-获取------------用户头像 -->
+                <image src="../../images/icon1.jpeg"></image>
+              </view>
+              <text>{{item.user_name}}发布了商品</text>
+              <!--获取用户--名字-->
+            </a>
+
+          </view>
+
+          <view>
+
+            <label class="mylabel" wx:for="{{item.post_tags}}" wx:for-index="idx" wx:for-item="item_tag">
+              <text class="label_text">{{item_tag}}</text> </label>
+          </view>
+
+          <view class="feed-content">
+
+            <view class="answer-body">
+              <view data-item-Value="{{item}}" bindtap="bindItemTap">
+                <text class="answer-txt">{{item.post_brief}}</text>
+
+              </view>
+              <view class="answer-actions" data-item-Value="{{item}}" bindtap="bindItemTap">
+
+                <view class="like dot">
+                  <a>{{item.like_count}} 收藏 </a>
+
+                </view>
+                <view class="comments">
+                  <a>{{item.follow_count}} 回复 </a>
+
+                </view>
+
+              </view>
+
+            </view>
+          </view>
+
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+
+</view>

@@ -1,0 +1,60 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/search/search",
+    "pages/cart/cart",
+    "pages/address/address",
+    "pages/mine/mine",
+    "pages/goods/goods",
+    "pages/release/release",
+    "pages/mine/mycollect/mycollect",
+    "pages/mine/interest/interest",
+    "pages/search2/search2"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "dlut-Market",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "black",
+    "selectedColor": "white",
+    "borderStyle": "white",
+    "backgroundColor": "grey",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/index.png",
+        "selectediconPath": "/images/index_active.png"
+      },
+      {
+        "pagePath": "pages/search2/search2",
+        "text": "搜索",
+        "iconPath": "/images/search.png",
+        "selectediconPath": "/images/search_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "/images/cart.png",
+        "selectediconPath": "/images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "/images/profile.png",
+        "selectediconPath": "/images/profile_active.png"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true,
+  "sitemapLocation": "sitemap.json"
+}
